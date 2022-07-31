@@ -1,0 +1,5 @@
+baseURL = "http://christianberrig.org/"
+languageCode = "en-us"
+title = "Christian Berrig's website"
+theme = "simpleton"
+sectionPagesMenu = "mainMenu"

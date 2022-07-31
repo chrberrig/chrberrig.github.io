@@ -1,0 +1,100 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[italicdiff]{physics}
+\usepackage{float}
+% \usepackage{cprotect}% http://ctan.org/pkg/cprotect
+
+\usepackage{tikz}
+\usepackage{tikz-feynman}
+
+\usepackage{hyperref}
+\usepackage{listings}
+
+\setcounter{section}{-1}
+
+% \usepackage[style=numeric]{biblatex}
+% \addbibresource{bib.bib}
+
+\author{Christian Berrig}
+\title{Numerical methods for simulating compartmental models}
+\begin{document}
+
+\lstset{
+	% language=python,
+	tabsize=3,
+	frame=lines,
+	% caption=Test,
+	% label=code:sample,
+	% frame=box,%shadowbox,
+	rulesepcolor=\color{gray},
+	xleftmargin=20pt,
+	framexleftmargin=15pt,
+	keywordstyle=\color{blue}\bf,
+	commentstyle=\color{green},
+	stringstyle=\color{red},
+	numbers=left,
+	numberstyle=\tiny,
+	numbersep=5pt,
+	breaklines=true,
+	showstringspaces=false,
+	basicstyle=\footnotesize,
+	emph={str},
+	emphstyle={\color{magenta}}
+}
+
+\maketitle
+
+%\begin{abstract}
+%\end{abstract}
+
+
+\section{Compartmental models} \label{sec:rev_proj1}
+
+\subsection{The space and complexity of compartmental models}
+By pure combinatorical considerations, it is not hard to see that a compartmental model with $n$ compartments, there are $\binom{n}{2} = \frac{n(n-1)}{2} = sum_{i=1}^{n-1} i$ posible flows. 
+as a consequence of this, the complexity in terms of possible flows of compartmental systems increases as \bigo (n^{2}) as function of compartment number. 
+
+\subsection{Deterministic compartmental models and general analysis}
+
+\subsection{Linear stability analysis}
+
+\section{Disease models}
+In what follows, the SIR-model will be our starting point for discussing general principles about compartmental diseasemodels for communicable diseases, but we will also discuss expantions to this model. The goal of doing this, is to get a firm understanding of not only the dynamics of such models, which depend widely on the exact construction of the included compartments, but also on important quantities associated these models, that will be the aims of computing with the numerical methods we will consider in the chapters to come.
+
+\subsection{SIR-model}
+The simplest disease model, using the framework of compartmental models, is probably the $SIR$-model, which is defined through the differential equations:
+% Here be formulas ...
+
+\subsubsection{History and derivation}
+This system is wery thoroughly analysed, through the last ca 100 years. 
+The very short version of the $SIR$-models history takes its origin from the more general kermack-MacKendric model, as a special cace of a formulation of the infectious disease model, formulated through a renewal equation:
+\begin{align*}
+	y(t) = s(t) \int_{0}^{\infty} y(t - \tau) \beta(\tau) \dd \tau
+\end{align*}
+
+\subsubsection{Basic reproduction number, R0}
+
+\subsubsection{Final size}
+
+% \printbibliography
+
+\appendix
+
+\newpage
+\section{Commands run in \texttt{PAUP*}, along its output.} \label{sec:paup_code_0}
+\lstinputlisting[label=code:runpaup_0]{../likelihood/runpaup_likelihood.txt}
+\lstinputlisting[label=code:out_paup_0]{../likelihood/out_paup_likelihood.txt}
+
+
+
+% \section{Results from \texttt{growth.py}} \label{sec:results1}
+% \begin{table}[H]
+% \centering
+% \begin{tabular}{rrrrrr}
+% \input{../simulation/table.txt}
+% \end{tabular}
+% \end{table}
+
+% \lstinputlisting[basicstyle=\ttfamily\scriptsize,language=somelang]{filename}
+\end{document}
