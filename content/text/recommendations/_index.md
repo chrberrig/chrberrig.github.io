@@ -1,7 +1,7 @@
 ---
 title: "Recommendations"
 date: 2022-07-29T08:36:42+02:00
-draft: true
+draft: false
 ---
 
 ## Reading/watching/listening recommendations

@@ -1,7 +1,8 @@
 ---
 title: "Text"
 date: 2022-07-28T20:34:05+02:00
-draft: true
+draft: false
+menu: "mainmenu"
 ---
 
 # Text
@@ -18,7 +19,7 @@ theory. Since my focus recently changed to mathematical modelling of
 infectious diseases, much of recent education in mathematics have been
 characterized of applied mathematics, in particular in networks,
 dynamical systems and computational/numerical modelling. I have compiled
-a list of my [publications of academic papers](/academia/publications.html).
+a list of my [publications of academic papers](/academia/publications/index.html).
 
 ## Notes
 
@@ -30,7 +31,7 @@ are accessible [here](/text/notes/index.html)
 
 ## Reading/watching/listening recommendations
 
-This is simply a list of some reading I have done which I can recommend
+This is [simply a list of some media consumption](/text/recommendations/index.html) I have done which I can recommend
 for both entertainment and education. The list is probably not
 comprehensive, but I will make the attempt to make it so and to keep it
 updated.

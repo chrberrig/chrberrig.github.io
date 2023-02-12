@@ -1,7 +1,7 @@
 ---
 title: "Publications"
 date: 2022-07-25T21:43:52+02:00
-draft: true
+draft: false
 ---
 
 # Publications

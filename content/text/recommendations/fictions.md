@@ -1,7 +1,8 @@
 ---
 title: "Fictions"
 date: 2022-08-07T11:05:53+02:00
-draft: true
+draft: false
+tags: ["Books", "Meta"]
 ---
 
 by Jorge Luis Borges

@@ -1,7 +1,8 @@
 ---
 title: "Software"
 date: 2022-07-29T19:54:17+02:00
-draft: true
+draft: false
+menu: "mainmenu"
 ---
 
 # Software

@@ -1,7 +1,8 @@
 ---
 title: "Digital totalitarianism (Digital totalitarisme)"
 date: 2022-08-07T11:31:59+02:00
-draft: true
+draft: false
+tags: ["Tech"]
 ---
 
 *by Ph.D. Mads Vestergaard*

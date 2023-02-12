@@ -1,7 +1,7 @@
 ---
 title: "V for Vendetta"
 date: 2022-08-07T10:18:42+02:00
-draft: true
+draft: false
 tags: ["Graphic-novel", "Anarchism"]
 ---
 

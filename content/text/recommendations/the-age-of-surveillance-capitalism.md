@@ -1,7 +1,7 @@
 ---
 title: "The Age of Surveillance Capitalism"
 date: 2022-08-07T11:28:41+02:00
-draft: true
+draft: false
 tags: ["Books", "Tech"]
 ---
 

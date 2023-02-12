@@ -1,7 +1,7 @@
 ---
 title: "Notes"
 date: 2022-07-28T23:01:56+02:00
-draft: true
+draft: false
 ---
 
 # Notes

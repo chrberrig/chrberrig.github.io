@@ -1,8 +1,8 @@
 ---
 title: "Reflections on Trusting Trust"
 date: 2022-08-07T10:27:58+02:00
-draft: true
-tags: ["Academic papers", "Computer science"]
+draft: false
+tags: ["Academic papers", "Computer science", "Meta"]
 ---
 
 by Ken Thompson

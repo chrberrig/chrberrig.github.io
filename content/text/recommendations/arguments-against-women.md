@@ -1,7 +1,7 @@
 ---
 title: "Arguments against women (Argumenter imod kvinder - fra demokratiets barndom til i dag)"
 date: 2022-08-07T10:16:33+02:00
-draft: true
+draft: false
 tags: ["Books"]
 ---
 
