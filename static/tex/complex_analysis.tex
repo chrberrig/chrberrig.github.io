@@ -1,0 +1,79 @@
+\documentclass[a4paper,twoside]{article}
+\usepackage[utf8]{inputenc}
+
+\usepackage{amsmath,amsfonts,amssymb,amsthm}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}[theorem]
+% \theoremstyle{definition}
+\newtheorem{definition}{Definition} %[section]
+
+\usepackage[italicdiff]{physics}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{tikz}
+\usepackage{tkz-euclide} %for euclidian constructions in Tikz. 
+\usepackage{pgfplots}
+	\setlength{\parindent}{0pt}
+	\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
+\usepackage{hyperref}
+
+%%% specific for article class %%%
+\usepackage[rmargin=2.7cm,lmargin=2.7cm,bmargin=2.5cm,tmargin=2.5cm]{geometry}
+
+% \usepackage{natbib}            % for bibtex
+\usepackage[backend=biber,style=phys]{biblatex}		% for biblatex
+\bibliography{/home/chrberrig/Documents/LaTeX/bib.bib}	% for biblatex
+
+\title{Complex analysis (basics)}
+\usepackage[affil-it]{authblk}	% for author affiliations
+\author[1]{Christian Berrig
+\thanks{Electronic address: \href{mailto:chrberrig@protonmail.ch}{chrberrig@protonmail.ch}}
+}
+\affil[1]{Institute of Science and Environment, RUC}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+% \newpage
+% \tableofcontents
+% \newpage
+
+\begin{definition}[Analytic/holomorphic function] 
+	For a conplex variable $z$, we say that the complex function $f(z)$ is analytic or holomorphic at $z$ (and in a neighgbourhood around $z$), iff:
+	\begin{align*}
+		f'(z) = \lim_{z' \rightarrow z} \dfrac{f(z) - f{z'}}{z - z'}
+	\end{align*}
+	exists and is well defined as $z' \rightarrow z$ from any direction in the complex plane \\
+	A function analytic on all points in the complex plane is also said to be entire.
+\end{definition}
+
+\begin{corollary}[Cauchy–Riemann equations]
+	For any analytic function, $f(z) = u + iv$, where $z = x + iy$, the following holds:
+	\begin{align*}
+		\partial{u}{x} &= \partial{v}{y} \\
+		\partial{u}{y} &= -\partial{v}{x}
+	\end{align*}
+\end{corollary}
+\begin{proof}
+	This is prooved by the choise of direction of integrability: take respectively the real and imaginary axis as directions for differentiation to find that:
+	
+\end{proof}
+
+% \begin{theorem}[Cauchy's integral theorem]
+% 
+% \begin{align*}
+% \end{align*}
+% \end{theorem}
+% 
+% \begin{proof}
+% \end{proof}
+% 
+
+ 
+
+% \bibliographystyle{plain}                                     % for bibtex
+% \bibliography{/Users/chrberrig/Documents/LaTeX/bib.bib}       % for bibtex
+\printbibliography      % for biblatex
+
+\end{document}

@@ -23,14 +23,17 @@ You can find my ORCID [here](/contact).
 
 I have compiled a list of [my publications](/academia/publications), that I
 maintain.
+I have studied mathematics alongside my education in physics, and since I originally aspired to work in theoretical quantum information, much of the mathematics I picked up along the way, is tangential so quantum theory. 
+Since my focus changed for my PhD to mathematical modelling of infectious diseases, much of recent education in mathematics have been characterized of applied mathematics, in particular in networks, dynamical systems and computational/numerical modelling. 
 
-## [Notes](/text/notes)
+
+## [Notes](/academia/notes)
 
 The notes that exists on this site, are notes written primarily for my
 own sake. In this way, I can check that I have actually understood a
 subject, while saving and communicating this knowledge. You are free to
 use these notes for any non-commercial use you see fit. My notes on are
-accessible [here](/text/notes).
+accessible [here](/academia/notes).
 
 ## [Mathematics](/academia/mathematics)
 

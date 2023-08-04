@@ -1,0 +1,88 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[italicdiff]{physics}
+\usepackage{float}
+% \usepackage{cprotect}% http://ctan.org/pkg/cprotect
+
+\usepackage{tikz}
+\usepackage{tikz-feynman}
+
+\usepackage{hyperref}
+\usepackage{listings}
+
+\setcounter{section}{-1}
+
+% \usepackage[style=numeric]{biblatex}
+% \addbibresource{bib.bib}
+
+\author{Christian Berrig}
+\title{Queueing}
+\begin{document}
+
+\lstset{
+	% language=python,
+	tabsize=3,
+	frame=lines,
+	% caption=Test,
+	% label=code:sample,
+	% frame=box,%shadowbox,
+	rulesepcolor=\color{gray},
+	xleftmargin=20pt,
+	framexleftmargin=15pt,
+	keywordstyle=\color{blue}\bf,
+	commentstyle=\color{green},
+	stringstyle=\color{red},
+	numbers=left,
+	numberstyle=\tiny,
+	numbersep=5pt,
+	breaklines=true,
+	showstringspaces=false,
+	basicstyle=\footnotesize,
+	emph={str},
+	emphstyle={\color{magenta}}
+}
+
+\maketitle
+
+%\begin{abstract}
+%\end{abstract}
+
+
+\section{Queueing of exponential distributions} 
+
+Suppose that two exponentially distributed processes are queued. 
+Then the distribution of the total waiting time distribution can be calculated as:
+
+\begin{align*}
+	E_{\lambda_{1} \lambda_{2}}(t) 
+	=& \int_{0}^{t} \dd \tau \lambda_{1} \exp{ - \lambda_{1}\tau} \lambda_{2} \exp{- \lambda_{2}(t-\tau)} \\
+	=& \lambda_{1} \lambda_{2} \exp{- \lambda_{2} t} \int_{0}^{t} \dd \tau \exp{- (\lambda_{1} - \lambda_{2})\tau} \\
+	=& \frac{- \lambda_{1} \lambda_{2}}{\lambda_{1} - \lambda_{2}} \exp{-\lambda_{2} t} \qty[ \exp{-(\lambda_{1} - \lambda_{2}) t } - 1] \\
+	=& \frac{- \lambda_{1} \lambda_{2}}{\lambda_{1} - \lambda_{2}} \qty[ \exp{- \lambda_{1} t} - \exp{- \lambda_{2} t}] \\
+\end{align*}
+
+Note that in the special case of $\lambda_{1} = \lambda_{2}$, the appearent singularity is removable.
+This is actually a generalization of the erlang distribution, with gives the distribution of the waiting times of $k$ (identically) queued exponential distributions.
+
+
+
+% \printbibliography
+
+\appendix
+
+\newpage
+% \section{Commands run in \texttt{PAUP*}, along its output.} \label{sec:paup_code_0}
+% \lstinputlisting[label=code:runpaup_0]{../likelihood/runpaup_likelihood.txt}
+% \lstinputlisting[label=code:out_paup_0]{../likelihood/out_paup_likelihood.txt}
+
+% \section{Results from \texttt{growth.py}} \label{sec:results1}
+% \begin{table}[H]
+% \centering
+% \begin{tabular}{rrrrrr}
+% \input{../simulation/table.txt}
+% \end{tabular}
+% \end{table}
+
+% \lstinputlisting[basicstyle=\ttfamily\scriptsize,language=somelang]{filename}
+\end{document}
