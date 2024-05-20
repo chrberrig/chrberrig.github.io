@@ -44,10 +44,10 @@
   <internal package="biblatex" priority="9" active="0">
     <generic>latex</generic>
     <provides type="dynamic">
-      <file>feynman_parametrizasion_proof.bcf</file>
+      <file>function_vector_equivalence.bcf</file>
     </provides>
     <requires type="dynamic">
-      <file>feynman_parametrizasion_proof.bbl</file>
+      <file>function_vector_equivalence.bbl</file>
     </requires>
     <requires type="static">
       <file>blx-dm.def</file>
@@ -68,19 +68,19 @@
     <generic>biber</generic>
     <cmdline>
       <binary>biber</binary>
-      <infile>feynman_parametrizasion_proof</infile>
+      <infile>function_vector_equivalence</infile>
     </cmdline>
     <input>
-      <file>feynman_parametrizasion_proof.bcf</file>
+      <file>function_vector_equivalence.bcf</file>
     </input>
     <output>
-      <file>feynman_parametrizasion_proof.bbl</file>
+      <file>function_vector_equivalence.bbl</file>
     </output>
     <provides type="dynamic">
-      <file>feynman_parametrizasion_proof.bbl</file>
+      <file>function_vector_equivalence.bbl</file>
     </provides>
     <requires type="dynamic">
-      <file>feynman_parametrizasion_proof.bcf</file>
+      <file>function_vector_equivalence.bcf</file>
     </requires>
     <requires type="editable">
       <file>/home/chrberrig/Documents/LaTeX/bib.bib</file>

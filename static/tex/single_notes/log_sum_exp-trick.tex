@@ -1,0 +1,136 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[italicdiff]{physics}
+\usepackage{float}
+% \usepackage{cprotect}% http://ctan.org/pkg/cprotect
+
+\usepackage{tikz}
+\usepackage{tikz-feynman}
+
+\usepackage{hyperref}
+\usepackage{listings}
+
+\setcounter{section}{-1}
+
+\DeclareMathOperator{\LSE}{LSE}
+
+% \usepackage[style=numeric]{biblatex}
+% \addbibresource{bib.bib}
+
+\author{Christian Berrig}
+\title{The log-sum-exp trick}
+\begin{document}
+
+\lstset{
+	% language=python,
+	tabsize=4,
+	frame=lines,
+	% caption=Test,
+	% label=code:sample,
+	% frame=box,%shadowbox,
+	rulesepcolor=\color{gray},
+	xleftmargin=20pt,
+	framexleftmargin=15pt,
+	keywordstyle=\color{blue}\bf,
+	commentstyle=\color{green},
+	stringstyle=\color{red},
+	numbers=left,
+	numberstyle=\tiny,
+	numbersep=5pt,
+	breaklines=true,
+	showstringspaces=false,
+	basicstyle=\footnotesize,
+	emph={str},
+	emphstyle={\color{magenta}}
+}
+
+\maketitle
+
+%\begin{abstract}
+%\end{abstract}
+
+
+\section{The problem} 
+In numerical calculations, there are limitations to how many bits can be allocated to a number of a specific type, which means that for very small numbers and very large numbers, there are simply not enough bits to be allocated to represent such a number. 
+In case of the large numbers, this is called an overflow problem (as one would need to take in use the "text bit" outside the allocation, whereby the number has "overflown") and for very small numbers an underflow problem.
+
+If such an number is the final result of an computation, you are out of luck; then the number cannot be represented numerically, unless more bits are allocated to the number. 
+However, if this is an intermediate result, the $LogSumExp$ ($LSE$) function or LSE-trick can be used to bypass an underflow or overflow problem, to yield the final result, which is in range of the number allocation.
+
+In the following I will use the Gibbs-Boltzmann distribution as an example, as the goal here is to represent probabilities $p_{i}$ from normalising collections of exponential functions, s.t.
+
+\begin{align*}
+	p_{i} = \frac{\exp{x_{i}}}{\sum_{j=1}^{N} \exp{x_{j}}} \quad , \quad \forall i \in \qty{1, ... , N}
+\end{align*}
+
+\section{The solution / why the trick works}
+Using the property of the logarithm:
+\begin{align*}
+	p_{i} =& \frac{\exp{x_{i}}}{\sum_{j=1}^{N} \exp{x_{j}}} \\
+	\log{p_{i}} =& x_{i} - \log{\sum_{j=1}^{N} \exp{x_{j}}} \\
+	\log{p_{i}} =& x_{i} - \LSE \qty(x_{1}, ..., x_{N}) \\
+	p_{i} =& \exp{ x_{i} - \LSE \qty(x_{1}, ..., x_{N}) }
+\end{align*}
+where 
+\begin{align*}
+	\LSE \qty(x_{1}, ..., x_{N}) = \LSE \qty(\vb*{x}) = \log{\sum_{j=1}^{N} \exp{x_{j}}}
+\end{align*}
+is the LogSumExp function. 
+
+This is only a matter or rewriting, but as we are still summing over the original exponential arguments, how does this help?
+This is where the trick enters: we factor out a common exponential factor, with the exponent equaling the largest exponent of the original arguments. 
+That is:
+\begin{align*}
+	%\LSE \qty(\vb*{x}) =&
+	\LSE \qty(x_{1}, ..., x_{N}) =& \log{\sum_{j=1}^{N} \exp{x_{j}}} \\
+	=& \log{\exp{c} \sum_{j=1}^{N} \exp{x_{j} - c}} \\
+	=& c + \log{\sum_{j=1}^{N} \exp{x_{j} - c}} \\
+	=& c + \LSE \qty( x_{1} - c, ..., x_{N} - c) \\
+\end{align*}
+where $c = \max \qty{x_{1}, ... , x_{N}}$
+
+Now we are suddenly dealing with arguments of the exponentials that are all translated by the same constant ensuring that the exponentials themselves are \emph{much} smaller than the original exponentials. 
+
+So applying this to the find the probability from above we can now write the full expression as:
+\begin{align*}
+	p_{i} =& \frac{\exp{x_{i}}}{\sum_{j=1}^{N} \exp{x_{j}}} \\
+	=& \exp{ x_{i} - \LSE \qty(x_{1}, ..., x_{N}) } \\
+	=& \exp{ x_{i} - c - \LSE \qty(x_{1}-c, ..., x_{N}-c) }
+\end{align*}
+which should be able to evaluate numerically. 
+
+Finally, before giving an example in code, note that we are not doing anything fancy here: in fact we are only reducing the original expression by a common factor:
+
+\begin{align*}
+	p_{i} =& \frac{\exp{x_{i}}}{\sum_{j=1}^{N} \exp{x_{j}}} \\
+	%=& \frac{\exp{c} \exp{x_{i} - c}}{\exp{c} \sum_{j=1}^{N} \exp{x_{j} - c}} \\
+	=& \frac{\exp{x_{i} - c}}{\sum_{j=1}^{N} \exp{x_{j} - c}} \\
+	=& \exp{ x_{i} - c - \LSE \qty(x_{1}-c, ..., x_{N}-c) }
+\end{align*}
+
+We went though all of the above for the purpose of not having to deal with exponentials of large numbers, so of cause you could start by subtracting the common factor (the max arg.) first and use the usual representation as well, however the $\LSE$ is an elegant way of functionalizing the problem, which makes the code more readable. 
+
+\section{Coding examples}
+
+\lstinputlisting[language=Python]{../../code/logsumexp.py}
+
+% \printbibliography
+
+\appendix
+
+\newpage
+% \section{Commands run in \texttt{PAUP*}, along its output.} \label{sec:paup_code_0}
+% \lstinputlisting[label=code:runpaup_0]{../likelihood/runpaup_likelihood.txt}
+% \lstinputlisting[label=code:out_paup_0]{../likelihood/out_paup_likelihood.txt}
+
+% \section{Results from \texttt{growth.py}} \label{sec:results1}
+% \begin{table}[H]
+% \centering
+% \begin{tabular}{rrrrrr}
+% \input{../simulation/table.txt}
+% \end{tabular}
+% \end{table}
+
+% \lstinputlisting[basicstyle=\ttfamily\scriptsize,language=somelang]{filename}
+\end{document}

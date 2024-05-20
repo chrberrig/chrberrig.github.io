@@ -1,0 +1,212 @@
+\documentclass[a4paper,twoside]{article}
+\usepackage[utf8]{inputenc}
+
+\usepackage{amsmath,amsfonts,amssymb,amsthm}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}[theorem]
+% \theoremstyle{definition}
+\newtheorem{definition}{Definition} %[section]
+
+\usepackage[italicdiff]{physics}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{tikz}
+\usepackage{tkz-euclide} %for euclidian constructions in Tikz. 
+\usepackage{pgfplots}
+	\setlength{\parindent}{0pt}
+	\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
+\usepackage{hyperref}
+
+\newcommand{\innerp}[2]{\left\langle #1 , #2 \right\rangle}
+% \declaremathoperator{}
+
+%%% specific for article class %%%
+\usepackage[rmargin=2.7cm,lmargin=2.7cm,bmargin=2.5cm,tmargin=2.5cm]{geometry}
+
+% \usepackage{natbib}            % for bibtex
+\usepackage[backend=biber,style=phys]{biblatex}		% for biblatex
+\bibliography{/home/chrberrig/Documents/LaTeX/bib.bib}	% for biblatex
+
+\title{Perspectives: Equivalence between functions and vectors}
+\usepackage[affil-it]{authblk}	% for author affiliations
+\author[1]{Christian Berrig
+\thanks{Electronic address: \href{mailto:chrberrig@protonmail.ch}{chrberrig@protonmail.ch}}
+}
+\affil[1]{Institute of Science and Environment, RUC}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+% \newpage
+% \tableofcontents
+% \newpage
+
+\section{Equivalence between functions and vectors}
+As is well known one way of describing a function is in terms of the functions domain and co-domain. 
+This notion of sets, defining what a function maps from and to, is useful in describing very basic properties of the functions in question. 
+Take as an example a function 
+$f: \mathbb{R} \mapsto \mathbb{R}$. 
+What such a function does is exactly, with this statement, to associate a value (in the real numbers, namely the image) to any real number (in the domain) given as an input. 
+This of course is also true for extended number-systems, like the complex numbers, but for clarity, we stick to the reals.
+
+Let us then see what a vector is; 
+beside the geometric interpretation, and the specific parametrization a vector is given, what is does is that for any particular $n$-dim vector, there is for each of the entries given a (real) number, associated with the index. 
+In other words, we can use the notion that we know from functions in a similar way such that:
+$v : i \rightarrow v_{i}$
+
+Note here, that working in the abstract, we don't need the vector to be finite dimensional (although it can be), and as such we can consider vectors as functions, from the natural numbers (the domain of the indices) to the reals (the entries of the vectors)
+$v: \mathbb{N} \mapsto \mathbb{R}$
+
+Thus vectors and functions are essentially the same type of object, lets just call them functions, but working on different domains. 
+
+\subsection{Inner products and projections}
+From the considerations above, we suddenly can gain an intuition from the inner product between functions of continuous parameters. 
+Let us consider the two forms (discrete vs continuous domain) side by side:
+
+\begin{align*}
+    \innerp{f}{g} &= \int_{-\infty}^{\infty} \dd x \qty[ f^{*}(x) g(x) ] \\
+    \innerp{f}{g} &= \sum_{i} f_{i}^{*} g_{i}
+\end{align*}
+where the $*$ denotes complex conjugation. 
+In the first case $f, g$ are considered functions and in the latter case they are vectors and the sum is over the relevant set of indices. 
+But note here how naturally the integral formulation is interpreted as the inner product over vectors with a continuous index, being the independent variable. 
+
+Further note what the interpretation of the inner product can yield further insights to the integral interpretation; 
+The inner product for vectors are the projection of vector $f$ onto the direction of $g$ scaled with length of $g$. 
+Thus the integral over $f g$ can be considered a projection operator, and the integral over $f^{2}$ be considered the Euclidean norm of $f$, squared. 
+This can also be seen in the notation and naming convention of typical norms. 
+
+The "usual" discrete Euclidean norm is noted $\ell_{2}$-norm and defined:
+\begin{align*}
+    \ell_{2}(f) = \norm{f}_{2} = \qty( \sum_{i} \abs {f_{i}}^{2})^{1/2}
+\end{align*}
+And is generalized to the $\ell_{p}$ norm as
+\begin{align*}
+    \ell_{p}(f) = \norm{f}_{p} = \qty( \sum_{i} \abs{f_{i}}^{p})^{1/p}
+\end{align*}
+
+But an equivalent for continuous variables exists as well, namely the $L_{2}$-norm:
+\begin{align*}
+    L_{2}(f) = \norm{f}_{2} = \qty( \int_{-\infty}^{\infty} \dd x \abs{f(x)}^{2})^{1/2}
+\end{align*}
+which is generalized to the $L_{p}$ norm in the similar way:
+\begin{align*}
+    L_{p}(f) = \norm{f}_{p} = \qty( \int_{-\infty}^{\infty} \dd x \abs{f(x)}^{p})^{1/p}
+\end{align*}
+
+
+\subsection{Orthogonality}
+In the same sense that vectors can be mutual orthogonal, in the sense that the projection between the two vectors is zero, the same notion can be carried over to the continuous variable case. 
+This means that orthogonality between functions suddenly makes sence, both in sence of functions and vectors being essentially the same type of object, but also as a geometric concept, in terms of projections. 
+Canonical examples of such functions are e.g. legendre polynomials and complex exponentials.  
+
+Examining complex exponentials as a specific example, provides us with an alternative route to fourier transforms than the computational convenient one most people are probably introduced to. 
+
+INSERT EXAMPLE HERE!
+
+When this notion of orthogonality between functions are understood, a very powerfull statement can be made, namely that functions can be decomposed into sets of orthogonal functions, jyst equivalent to how vectors can be decomposed into a set of orthogonal basis-vacors. 
+This decomposition takes the form:
+\begin{align*}
+    f(x) = \sum_{i} \innerp{b_{i}}{f} b_{i}(x)
+\end{align*}
+Here i have chosen to write the representation out as a sum, but note here that we do nao neccessarily have a discrete set of basis-functions; these too can line in a continuous variable space, such that:
+\begin{align*}
+    f(x) = \int_{-\infty}^{\infty} \dd y \innerp{b_{y}}{f} b_{y}(x)
+\end{align*}
+
+
+Ideally the "basis-functions" are also normal, in the inner product sense, such that:
+\begin{align*}
+    \innerp{b_{i}}{b_{j}} = delta_{ij}
+\end{align*}
+but as this is not always the case, the functions $f_{i}$ can be "normalized", such that they fulfill this reqirement. 
+
+Take the fourier transform as an example: 
+The basis vectors/functions are $e^{i \omega t}$, such that the projection onto these vectors for any (sufficiently well behaved) function $f(t)$ is:
+\begin{align*}
+    \tilde{f}(\omega) = \innerp{e^{i \omega t}}{f(t)} = \int_{-\infty}^{\infty} \dd t e^{- i \omega t} f(t)
+\end{align*}
+and can thus be representet in the following way:
+\begin{align*}
+    f(t) = \frac{1}{2 \pi} \int_{-\infty}^{\infty} \dd \omega e^{i \omega t} \innerp{e^{i \omega t}}{f(t)} = \int_{-\infty}^{\infty} \dd t e^{i \omega t} \tilde{f}(\omega)
+\end{align*}
+The factor of $\frac{1}{2 \pi}$ in fromt is simply the normalilzasion required for orthonormal basis vectors, as mentioned earlier.
+
+\subsection{Integral transforms}
+Now an extra layer of nomenclature is introduced, that is never the less usefull as this is the guise of these subjects, as normally introduced. 
+The concept of integral transforms, first seem very strange, due to the nature of the subject introduced, as a way of transforming one variable into another through an integral. 
+Computationally, this is done in the following way, that we will soon understand in terms of abstracty vectors. 
+say, we have a function of 2 variables $K(y, x)$ and multiplying this with the target function f(x), we can "integrate out" the variable $x$, leaving us with a function:
+\begin{align*}
+    \tilde{f}(y) = \int_{-\infty}^{\infty} \dd x K(y, x) f(x)
+\end{align*}
+
+The function $K(y, x)$ is called the integration kernel, and is what defines the "type" of integral transform; 
+\begin{itemize}
+\item[$e^{i y x}$] is the kernel for the fourier transform
+\item[$e^{y x}$] is the kernel for the laplace transform
+\item[etc.] etc.
+\end{itemize}
+
+But we can now see what the Fourier transform is explicitly: 
+It is the inner product between the target function $f(t)$ and set of basis-vectors, indexed by the continuous variable $\omega$ and $t$. 
+And the inverse Fourier transform is simply the representation of the target-function as expansion/decomposition in terms of the basis vectors, using the coefficients given by the inner product. 
+
+\subsection{Kernels}
+The kernel functions by themselves can therefore also be understood in the context of linear transforms, as an analogy to what is learned from linear algebra. 
+In the same manner that a matrix is a linear transform that takes a vector from space $V$ and returns a vector in space $W$, the matrix $M$ is a linear mapping:
+\begin{align*}
+    M : V \mapsto W
+\end{align*}
+such that:
+\begin{align*}
+    w_{j} = \sum_{i} M_{ji}v_{i}
+\end{align*}
+we can consider an integration kernel as the transform from $X$ (the space of $x$) to $Y$ (space of variable $y$) in the following way:
+\begin{align*}
+    K : X \mapsto Y
+\end{align*}
+such that:
+\begin{align*}
+    \tilde{f}(y) = \int_{X} \dd x K(y, x) f(x)
+\end{align*}
+and seen in this way, when abstracting the target function away, we consider 
+\begin{align*}
+    \int_{X} \dd x K(y, x) : X \mapsto Y
+\end{align*}
+the linear transform. 
+The kernel is thus the continuous variable equivalent to a matrix and the integral transform the continuous variable analogue to matrix vector multiplication, resulting in a vector in the co-domain space. 
+
+\subsection{Propagators and (abstract) algebra}
+\subsubsection{composition}
+Finally layering on another layer of abstraction, we can now talk about composition
+\subsubsection{matrix-matrix multiplication: composition of linear transforms in discrete spaces}
+\subsubsection{kernel transforms: composition of linear transforms in continuous spaces}
+\subsubsection{abstract algebra}
+\subsubsection{propagators}
+
+
+
+
+% \begin{definition}[] 
+% \end{definition}
+% 
+% \begin{corollary}[Cauchy–Riemann equations]
+% \end{corollary}
+
+% \begin{theorem}[Cauchy's integral theorem]
+% \end{theorem}
+% 
+% \begin{proof}
+% \end{proof}
+% 
+
+ 
+
+% \bibliographystyle{plain}                                     % for bibtex
+% \bibliography{/Users/chrberrig/Documents/LaTeX/bib.bib}       % for bibtex
+\printbibliography      % for biblatex
+
+\end{document}
