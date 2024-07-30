@@ -20,7 +20,7 @@ evolution and dynamics of infectious diseases.
 
 ### Notes
 
-I have written some [notes](/text/notes) regarding subjects, that interests me academically.
+I have written some [notes](/academia/notes) regarding subjects, that interests me academically.
 Specifically these subjects are Mathematics, Physics, Epidemiology, Biology and Programming.
 I am by far no expert in any field alone, and do this to document my own experiences in these fields.
 I continually update this collection of notes, which is by no means comprehensive.

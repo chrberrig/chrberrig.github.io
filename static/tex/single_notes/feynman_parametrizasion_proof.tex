@@ -1,9 +1,6 @@
 \documentclass[a4paper,twoside]{article}
 \usepackage[utf8]{inputenc}
 
-% \input{/home/chrberrig/Documents/LaTeX/usepackages.tex}
-% \input{/home/chrberrig/Documents/LaTeX/newcommands.tex}
-
 \usepackage{amsmath,amsfonts,amssymb,amsthm}
 \newtheorem{theorem}{Theorem}
 \usepackage[italicdiff]{physics}
@@ -20,15 +17,16 @@
 \usepackage[rmargin=2.7cm,lmargin=2.7cm,bmargin=2.5cm,tmargin=2.5cm]{geometry}
 
 % \usepackage{natbib}            % for bibtex
-\usepackage[backend=biber,style=phys]{biblatex}		% for biblatex
-\bibliography{/home/chrberrig/Documents/LaTeX/bib.bib}	% for biblatex
+% \usepackage[backend=biber,style=phys]{biblatex}		% for biblatex
+% \bibliography{/home/chrberrig/Documents/LaTeX/bib.bib}	% for biblatex
 
-\title{Short proof of Feynman parametrizasion formula.}
-\usepackage[affil-it]{authblk}	% for author affiliations
-\author[1]{Christian Berrig
+\title{Feynman parametrizasion.}
+% \usepackage[affil-it]{authblk}	% for author affiliations
+% \author[1]{Christian Berrig
+\author{Christian Berrig
 \thanks{Electronic address: \href{mailto:chrberrig@protonmail.ch}{chrberrig@protonmail.ch}}
 }
-\affil[1]{Institute of Science and Environment, RUC}
+% \affil[1]{Institute of Science and Environment, RUC}
 \date{\today}
 
 \begin{document}
@@ -38,7 +36,7 @@
 % \tableofcontents
 % \newpage
 
-Feynmans denominator formula , or simply feynman parametrizasion, is quite usefull and a well known result in high energy physics for evaluating certain tyles of Feynman diagrams, but i have not explicitly found (even though it of course might be out there on the internet somewhere) a detailed proof of this formula, so here is my attempt at such a detailed proof\footnote{It should be noted though, that indirect proofs are plentifull and some quite good as well. Look no further than the \href{https://en.wikipedia.org/wiki/Feynman_parametrization}{wikipedia page for Feynman parametizasion}, and you will see derivations of some simplified cases, but not the full machinery.}. This is as well an excercise for me to make this derivation, and I hope you will find it usefull:
+Feynman's denominator formula , or simply Feynman parametrization, is quite useful and a well known result in high energy physics for evaluating certain types of Feynman diagrams, but i have not explicitly found (even though it of course might be out there on the internet somewhere) a detailed proof of this formula, so here is my attempt at such a detailed proof\footnote{It should be noted though, that indirect proofs are plentiful and some quite good as well. Look no further than the \href{https://en.wikipedia.org/wiki/Feynman_parametrization}{wikipedia page for Feynman parametrization}, and you will see derivations of some simplified cases, but not the full machinery.}. This is as well an exercise for me to make this derivation, and I hope you will find it useful:
 
 \begin{theorem}[Feynman parametrizasion or Feynmans denominator formula]
 \begin{align*}
@@ -63,23 +61,23 @@ It is not hard to generalize this formula a tiny amount to make another family o
 \begin{align*}
 \Gamma_{A}(\alpha) = \int_{0}^{\infty} \dd{t} \left( t^{\alpha - 1} e^{-At} \right) = \frac{\Gamma(\alpha)}{A^{\alpha}}
 \end{align*}
-Now, imagine that we want the product metween $n$ of of such functions, all with different $A_{i}$ and $\alpha_{i}$, where the subscript $i$ is introduced only to distinguish between different $A_{i}$ and $\alpha_{i}$.
+Now, imagine that we want the product between $n$ of of such functions, all with different $A_{i}$ and $\alpha_{i}$, where the subscript $i$ is introduced only to distinguish between different $A_{i}$ and $\alpha_{i}$.
 \begin{align*}
 \prod_{i=1}^{n}\Gamma_{A_{i}}(\alpha_{i}) = \prod_{i=1}^{n} \int_{0}^{\infty} \dd{t_{i}} \left( t_{i}^{\alpha_{i} - 1} e^{-A_{i}t_{i}} \right) = \frac{\prod_{i=1}^{n}\Gamma(\alpha_{i})}{\prod_{i=1}^{n}A_{i}^{\alpha_{i}}}
 \end{align*}
 It is important to note here as well that this identity is not necessarily true for infinite values of $n$, thus we restrict ourselves to the case of finite $n$.
-To proceed from here, let the sum of all the integraiton variable be $s$, such that:
+To proceed from here, let the sum of all the integration variable be $s$, such that:
 \begin{align*}
 s = \sum_{i=1}^{n}t_{i}
 \end{align*}
 To clarify, the ranges of each of the $t_{i} = [0, \infty]$, $\forall i \in \{1, 2, ... , n\}$, and thus we have that $s = [0, \infty]$
-we can expand the integral part of the previous equation, by using a dirac-$\delta$ function such that:
+we can expand the integral part of the previous equation, by using a Dirac-$\delta$ function such that:
 \begin{align*}
 \prod_{i=1}^{n}\Gamma_{A_{i}}(\alpha_{i}) 
 = \int_{0}^{\infty} \dd{s} \left( \prod_{i=1}^{n} \int_{0}^{\infty} \dd{t_{i}} \left( t_{i}^{\alpha_{i} - 1} e^{-A_{i}t_{i}} \right) \right) \delta \left(s - \sum_{i=1}^{n}t_{i}\right) 
 = \frac{\prod_{i=1}^{n}\Gamma(\alpha_{i})}{\prod_{i=1}^{n}A_{i}^{\alpha_{i}}}
 \end{align*}
-From here, new normalized variables $x_{i}$ are introdused
+From here, new normalized variables $x_{i}$ are introduced
 \begin{align*}
 x_{i} = \frac{t_{i}}{s} \quad , \quad x_{i} \in [0, 1]
 \end{align*}
@@ -88,7 +86,7 @@ We can now make the following substitution\footnote{I will ask you to forgive my
 \prod_{i=1}^{n}\Gamma_{A_{i}}(\alpha_{i}) 
 = \int_{0}^{\infty} \dd{s} \left( \prod_{i=1}^{n} \int_{0}^{1} \dd{x_{i}} s \left( (s x_{i})^{\alpha_{i} - 1} e^{-A_{i}s x_{i}} \right) \right) \delta \left(s \left(1 - \sum_{i=1}^{n}x_{i} \right) \right) 
 \end{align*}
-and using the deltafunction identity that:
+and using the delta function identity that:
 \begin{align*}
 \delta \left(s \left(1 - \sum_{i=1}^{n}x_{i} \right) \right) = \frac{1}{s}\delta \left(1 - \sum_{i=1}^{n}x_{i} \right)
 \end{align*}
@@ -121,7 +119,7 @@ and thus:
 \frac{\left( \prod_{i=1}^{n} x_{i}^{\alpha_{i} - 1} \right)}{\left( \sum_{i=1}^{n}A_{i}x_{i} \right)^{\left( \sum_{i=1}^{n} \alpha_{i} \right)}} \\
 \end{align*}
 since the $\Gamma \left( \sum_{i=1}^{n} \alpha_{i} \right)$ factor is independent of the $x_{i}$
-Now, using what we have found, remember what the goal was; to find a integral-parametrized form of $\frac{1}{\prod_{i=1}^{n}A_{i}^{\alpha_{i}}}$, we can also remember that the initial representation we found for the $\Gamma_{A}(\alpha)$ function, we have actually (almost) arrivedat the end result:
+Now, using what we have found, remember what the goal was; to find a integral-parametrized form of $\frac{1}{\prod_{i=1}^{n}A_{i}^{\alpha_{i}}}$, we can also remember that the initial representation we found for the $\Gamma_{A}(\alpha)$ function, we have actually (almost) arrived at the end result:
 \begin{align*}
 \prod_{i=1}^{n}\Gamma_{A_{i}}(\alpha_{i}) 
 = \frac{\prod_{i=1}^{n}\Gamma(\alpha_{i})}{\prod_{i=1}^{n}A_{i}^{\alpha_{i}}}
@@ -145,6 +143,6 @@ whereby we can conclude with the formula:
 
 % \bibliographystyle{plain}                                     % for bibtex
 % \bibliography{/Users/chrberrig/Documents/LaTeX/bib.bib}       % for bibtex
-\printbibliography      % for biblatex
+% \printbibliography      % for biblatex
 
 \end{document}

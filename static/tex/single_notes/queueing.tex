@@ -62,8 +62,33 @@ Then the distribution of the total waiting time distribution can be calculated a
 	=& \frac{- \lambda_{1} \lambda_{2}}{\lambda_{1} - \lambda_{2}} \qty[ \exp{- \lambda_{1} t} - \exp{- \lambda_{2} t}] \\
 \end{align*}
 
-Note that in the special case of $\lambda_{1} = \lambda_{2}$, the appearent singularity is removable.
-This is actually a generalization of the erlang distribution, with gives the distribution of the waiting times of $k$ (identically) queued exponential distributions.
+Note that in the special case of $\lambda_{1} = \lambda_{2}$, the apparent singularity is removable.
+This is actually a generalization of the Erlang distribution, with gives the distribution of the waiting times of $k$ (identically) queued exponential distributions.
+
+In the special case, however where $\lambda_{1} = \lambda_{2} = \lambda$, we have the special case of an Erlang-process; each subprocess is distributed exponentially, but the total waiting time is no longer exponential but follows an Erlang distribution.
+
+The form of this distribution can be found pr induction to be:
+\begin{align*}
+    P(t \vert \lambda, k) 
+\end{align*}
+since:
+\begin{align*}
+	E_{\lambda}(t \vert \lambda, 1) =& \exp{- \lambda t}
+	E_{\lambda}(t \vert \lambda, 2)
+	=& \int_{0}^{t} \dd \tau \lambda \exp{ - \lambda \tau} \lambda \exp{- \lambda(t-\tau)} \\
+	=& \lambda \lambda \exp{- \lambda t} \int_{0}^{t} \dd \tau \exp{- (\lambda - \lambda)\tau} \\
+	% =& \frac{- \lambda_{1} \lambda_{2}}{\lambda_{1} - \lambda_{2}} \exp{-\lambda_{2} t} \qty[ \exp{-(\lambda_{1} - \lambda_{2}) t } - 1] \\
+	% =& \frac{- \lambda_{1} \lambda_{2}}{\lambda_{1} - \lambda_{2}} \qty[ \exp{- \lambda_{1} t} - \exp{- \lambda_{2} t}] \\
+\end{align*}
+
+Note the two obvious ways in which the Erlang distributed can be used:
+\begin{itemize}
+    \item in terms of queued processes, in which each of the sub-processes has a well defined waiting time, that do not scale with number of subprocesses. 
+        This is the archetypical example of the supermarket queue, where the assumption is that a single customers expedition time ex exponentially distributed, and the assembler works with constant rate, that is the rate of expedition is constant no matter the length of the queue. 
+    \item in the particular case in which the rate scales with the queue length, such that the average waiting time for the queued process do not change with the length of the queue, but the mean waiting time becomes more well defined. 
+        This is the way in which the typical rate of the entire process is well known, and the shape-parameter $k$ adjust how well-defined the reciprocal process rate adheres to the mean waiting time. 
+        The larger the shape parameter, the more this distribution approaches a Dirac-delta distribution.
+\end{itemize}
 
 
 
