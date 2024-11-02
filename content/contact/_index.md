@@ -4,7 +4,6 @@ date: 2022-07-25T21:41:25+02:00
 draft: false
 menu: "mainmenu"
 ---
-# Contact
 
 Private E-mail: <chrberrig@protonmail.ch>  
 Work E-mail: <berrig@ruc.dk>  

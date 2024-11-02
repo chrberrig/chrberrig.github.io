@@ -2,10 +2,8 @@
 title: "Academia"
 date: 2022-07-25T22:59:13+02:00
 draft: false
-menu: "mainmenu"
+# menu: "mainmenu"
 ---
-
-# Academia
 
 ## Education
 

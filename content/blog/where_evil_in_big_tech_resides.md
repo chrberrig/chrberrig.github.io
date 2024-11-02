@@ -23,3 +23,12 @@ My opposition is directed towards the fact that these solutions have zero opt-ou
 
 - the companies providing these services becomes TRUE infrastructure of a nation, without which one cannot conduct public actions, and as such, the public space becomes privatized. 
 - It
+
+
+
+### Free software, privacy, and democracy
+
+I have become fairly involved in the cause of Free software. I am a member of the currently functioning society for free software in Denmark "Fri software netværk" that is independent of both [FSF](https://www.fsf.org/) and [EFF](https://www.eff.org/), but pretty aligned in their causes.  
+My function in this society so far have been in outreach and communication, which I enjoy. This have in particular been focusing on high-school students as an awareness campaign.
+
+I believe (I don't try to preach, you are totally entitled to your own opinion, man), that the current way of how the web functions, is somewhere in-between economically and democratically unsustainable, to problematic. The way platforms in particular incentivise people to become dependent of their "services". The role social media have taken as a form of privatized public space in digital format, is from my point of view currently enslaving its users in the digital space. Thus, I dub the far majority of the large tech-companies "Digital enslavement organizations".
