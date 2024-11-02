@@ -42,6 +42,18 @@ theme = "smol"
         url = "/contact/"
         weight = 6
     
+    [[menu.main]]
+        identifier = "tags"
+        name = "Tags"
+        url = "/tags/"
+        weight = 6
+    
+    [[menu.main]]
+        identifier = "categories"
+        name = "Categories"
+        url = "/categories/"
+        weight = 6
+    
     # Footer
     [[menu.footer]]
         name = "Github"
