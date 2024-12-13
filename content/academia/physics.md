@@ -7,6 +7,8 @@ draft: true
 I received a masters degree in physics from University of Copenhagen in
 2017.
 
+<!--more-->
+
 ## Areas of interest
 
 ### Quantum theory

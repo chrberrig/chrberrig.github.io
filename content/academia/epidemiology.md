@@ -4,8 +4,6 @@ date: 2022-07-25T21:44:23+02:00
 draft: true
 ---
 
-# Epidemiology and modeling of infectious diseases
-
 In may 2020, during the first months of lockdown in Denmark due to the
 COVID-19 pandemic, I became scientific assistant at RUC, under Viggo
 Andreasen and Lone Simonsen. By November 2020, I became a PhD student
@@ -13,8 +11,10 @@ under Viggo Andreasen to investigate "The impact of heterogeneity on the
 transmission dynamics of epidemic diseases" in the research group
 PandemiX at RUC. I have as well as studying this very broad subject,
 also assisted and participating in writing reports to SSI for further
-assessment, as a part of the PandemiX group. Some of these reports can
+assessment, as a part of the [PandemiX group](https://ruc.dk/research-centre/pandemix-center). Some of these reports can
 be seen under [my publications](publications.html)
+
+<!--more-->
 
 ## Areas of research
 

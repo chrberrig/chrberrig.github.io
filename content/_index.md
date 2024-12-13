@@ -10,6 +10,15 @@ draft: false
 
 My name is Christian Berrig.  
 
+## Education
+
+I have my Bachelor's degree and Master's degree in physics from the
+University of Copenhagen.  
+After a year as a physics and math teacher at Slagelse Gymnasium, I
+decided to go back to Academia.  
+I am currently a Ph.D. student in the [PandemiX group](https://ruc.dk/research-centre/pandemix-center) at RUC, doing mathematical modelling of evolution and dynamics of infectious diseases.  
+You can find my ORCID [here](/contact).
+
 ## [Academia](/academia/index.html)
 
 I have a M.Sc in physics from University of Copenhagen.  
@@ -17,13 +26,6 @@ I am currently a Ph.D. student in the
 [PandemiX group](https://ruc.dk/research-centre/pandemix-center) at
 [RUC](https://ruc.dk/) studying mathematical modelling and simulations of
 evolution and dynamics of infectious diseases.
-
-### Notes
-
-I have written some [notes](/academia/notes) regarding subjects, that interests me academically.
-Specifically these subjects are Mathematics, Physics, Epidemiology, Biology and Programming.
-I am by far no expert in any field alone, and do this to document my own experiences in these fields.
-I continually update this collection of notes, which is by no means comprehensive.
 
 ### Software
 

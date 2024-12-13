@@ -5,45 +5,6 @@ draft: false
 # menu: "mainmenu"
 ---
 
-## Education
-
-I have my Bachelor's degree and Master's degree in physics from the
-University of Copenhagen.  
-After a year as a physics and math teacher at Slagelse Gymnasium, I
-decided to go back to Academia.  
-I am currently a Ph.D. student in the [PandemiX
-group.](https://ruc.dk/research-centre/pandemix-center) at RUC, doing
-mathematical modelling of evolution and dynamics of infectious
-diseases.  
-You can find my ORCID [here](/contact).
-
-## [Publications](/academia/publications)
-
-I have compiled a list of [my publications](/academia/publications), that I
-maintain.
-I have studied mathematics alongside my education in physics, and since I originally aspired to work in theoretical quantum information, much of the mathematics I picked up along the way, is tangential so quantum theory. 
-Since my focus changed for my PhD to mathematical modelling of infectious diseases, much of recent education in mathematics have been characterized of applied mathematics, in particular in networks, dynamical systems and computational/numerical modelling. 
-
-## [Notes](/academia/notes)
-
-The notes that exists on this site, are notes written primarily for my
-own sake. In this way, I can check that I have actually understood a
-subject, while saving and communicating this knowledge. You are free to
-use these notes for any non-commercial use you see fit. My notes on are
-accessible [here](/academia/notes).
-
-## [Epidemiology and disease modelling](/academia/epidemiology)
-
-In may 2020, during the first months of lockdown in Denmark due to the
-COVID-19 pandemic, I became scientific assistant at RUC, under Viggo
-Andreasen and Lone Simonsen. By November 2020, I became a PhD student
-under Viggo Andreasen to investigate "The impact of heterogeneity on the
-transmission dynamics of epidemic diseases" in the research group
-PandemiX at RUC. I have as well as studying this very broad subject,
-also assisted and participating in writing reports to SSI for further
-assessment, as a part of the [PandemiX
-group.](https://ruc.dk/research-centre/pandemix-center) Some of these
-reports can be seen under [my publications](/academia/publications)
 
 ## Programming
 
