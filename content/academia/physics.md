@@ -4,7 +4,8 @@ date: 2022-07-25T21:44:04+02:00
 draft: true
 ---
 
-# Physics
+I received a masters degree in physics from University of Copenhagen in
+2017.
 
 ## Areas of interest
 

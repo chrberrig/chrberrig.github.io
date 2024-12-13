@@ -4,9 +4,19 @@ date: 2022-07-25T21:44:13+02:00
 draft: true
 ---
 
-# Mathematics and applications
+I have studied mathematics alongside my education in physics, and since
+I originally aspired to work in theoretical quantum information, much of
+the mathematics I picked up along the way, is tangential to quantum
+theory. Since my focus changed to mathematical modelling of infectious
+diseases, much of recent education in mathematics have been
+characterized by applied mathematics, graph theory, adaptive dynamics,
+complex and stochastic modelling, and dynamical systems.
+
+<!--more-->
 
 ## Areas of interest
+
+### Bayesian inference
 
 ### Cryptology/cryptography
 
