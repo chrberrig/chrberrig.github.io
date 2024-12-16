@@ -1,7 +1,7 @@
 ---
 title: "Mathematics"
 date: 2022-07-25T21:44:13+02:00
-draft: true
+draft: false
 ---
 
 I have studied mathematics alongside my education in physics, and since
