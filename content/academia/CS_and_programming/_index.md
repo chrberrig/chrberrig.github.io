@@ -6,7 +6,7 @@ draft: false
 
 Through my education in physics, not much programming were (surprisingly) needed. 
 After I were actually in an environment in which I needed to APPLY knowledge (shocks\!) to disease modelling, I have become much more comfortable both with programming and computers. 
-This have lead me to the highly non-unique philosophy that "if you cant implement it, you probably have not understood it" 
+This have lead me to the highly non-unique philosophy that "if you can't implement it, you probably have not understood it" 
 
 <!--more-->
 
