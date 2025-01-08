@@ -18,11 +18,11 @@ theme = "smol"
         url = "/academia/"
         weight = 2
     
-    [[menu.main]]
-        identifier = "software"
-        name = "Software"
-        url = "/software/"
-        weight = 3
+    # [[menu.main]]
+    #     identifier = "software"
+    #     name = "Software"
+    #     url = "/software/"
+    #     weight = 3
     
     [[menu.main]]
         identifier = "blog"
